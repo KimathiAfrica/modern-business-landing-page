@@ -14,5 +14,22 @@
         <h2>About Us</h2>
         <p>We build modern and responsive websites for businesses.</p>
     </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll("section");
+    
+            function revealSections() {
+                sections.forEach((section) => {
+                    if (section.getBoundingClientRect().top < window.innerHeight * 0.85) {
+                        section.classList.add("visible");
+                    }
+                });
+            }
+    
+            window.addEventListener("scroll", revealSections);
+            revealSections(); // Run initially in case user is already scrolled
+        });
+    </script>
+    
 </body>
 </html>
